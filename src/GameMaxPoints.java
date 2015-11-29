@@ -2,9 +2,7 @@
 
 public class GameMaxPoints extends Game {
 
-	/**
-	 * 
-	 */
+	
 	private Integer nbMaxPoints;
 
 	/**

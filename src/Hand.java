@@ -2,9 +2,7 @@
 
 public class Hand {
 
-	/**
-	 * 
-	 */
+
 	public Card card;
 
 	/**
@@ -21,9 +19,6 @@ public class Hand {
 		 this.card = card; 
 	}
 
-	/**
-	 * 
-	 */
 	public void CopyOf_print_1() { 
 		// TODO Auto-generated method
 	 }
@@ -46,9 +41,7 @@ public class Hand {
 		return null;
 	 }
 
-	/**
-	 * 
-	 */
+	
 	public void print() { 
 		// TODO Auto-generated method
 	 }

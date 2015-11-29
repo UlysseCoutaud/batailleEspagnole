@@ -4,13 +4,9 @@ import java.util.List;
 
 public class Trick {
 
-	/**
-	 * 
-	 */
+	
 	public List<Card> cards;
-	/**
-	 * 
-	 */
+	
 	public List<Player> players;
 	/**
 	 * Getter of cards

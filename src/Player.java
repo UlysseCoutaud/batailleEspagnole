@@ -2,17 +2,11 @@
 
 public abstract class Player {
 
-	/**
-	 * 
-	 */
+	
 	private Hand hand;
-	/**
-	 * 
-	 */
+
 	private Integer points;
-	/**
-	 * 
-	 */
+	
 	private String name;
 	/**
 	 * Getter of hand
@@ -65,9 +59,7 @@ public abstract class Player {
 		// TODO Auto-generated method
 		return null;
 	 }
-	/**
-	 * 
-	 */
+
 	public void print() { 
 		// TODO Auto-generated method
 	 }

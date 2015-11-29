@@ -4,9 +4,6 @@ import java.util.List;
 
 public abstract class Game {
 
-	/**
-	 * 
-	 */
 	public Player player;
 	public List<Play> play;
 	/**
@@ -33,15 +30,11 @@ public abstract class Game {
 	public void setPlay(List<Play> play) { 
 		 this.play = play; 
 	}
-	/**
-	 * 
-	 */
+	
 	public void print() { 
 		// TODO Auto-generated method
 	 }
-	/**
-	 * 
-	 */
+	
 	public void nextPlay() { 
 		// TODO Auto-generated method
 	 }

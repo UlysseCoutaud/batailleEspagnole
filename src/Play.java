@@ -4,17 +4,11 @@ import java.util.List;
 
 public class Play {
 
-	/**
-	 * 
-	 */
+	
 	public List<Trick> trick;
-	/**
-	 * 
-	 */
+	
 	public Deck deck;
-	/**
-	 * 
-	 */
+	
 	private Color trump;
 	/**
 	 * Getter of trick
@@ -52,9 +46,7 @@ public class Play {
 	public void setTrump(Color trump) { 
 		 this.trump = trump; 
 	}
-	/**
-	 * 
-	 */
+	
 	public void print() { 
 		// TODO Auto-generated method
 	 }
@@ -66,9 +58,7 @@ public class Play {
 		// TODO Auto-generated method
 		return null;
 	 }
-	/**
-	 * 
-	 */
+	
 	public void next() { 
 		// TODO Auto-generated method
 	 } 

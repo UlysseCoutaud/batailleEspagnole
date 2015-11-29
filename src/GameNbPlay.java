@@ -2,9 +2,7 @@
 
 public class GameNbPlay extends Game {
 
-	/**
-	 * 
-	 */
+	
 	private Integer nbPlays;
 
 	/**

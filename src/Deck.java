@@ -19,9 +19,7 @@ public class Deck {
 		 this.card = card; 
 	}
 
-	/**
-	 * 
-	 */
+	
 	public void print() { 
 		// TODO Auto-generated method
 	 }
@@ -34,9 +32,6 @@ public class Deck {
 		// TODO Auto-generated method
 	 }
 
-	/**
-	 * 
-	 */
 	public void mix() { 
 		// TODO Auto-generated method
 	 }
