@@ -12,6 +12,20 @@ import java.util.List;
 public class Play {
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Play(List<Trick> trick, Deck deck, Color trump) {
+		super();
+		this.trick = trick;
+		this.deck = deck;
+		this.trump = trump;
+	}
+
 	public List<Trick> trick;
 	
 	public Deck deck;

@@ -11,6 +11,19 @@ import java.util.List;
  */
 public abstract class Game {
 
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Game(Player player, List<Play> play) {
+		super();
+		this.player = player;
+		this.play = play;
+	}
+
 	public Player player;
 	public List<Play> play;
 

@@ -10,6 +10,20 @@
 public abstract class Player {
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Player(Hand hand, Integer points, String name) {
+		super();
+		this.hand = hand;
+		this.points = points;
+		this.name = name;
+	}
+
 	private Hand hand;
 
 	private Integer points;

@@ -12,6 +12,20 @@ import java.util.List;
 public class Trick {
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Trick(List<Card> cards, List<Player> players) {
+		super();
+		this.cards = cards;
+		this.players = players;
+	}
+
+
 	public List<Card> cards;
 	
 	public List<Player> players;

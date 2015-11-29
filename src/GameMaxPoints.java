@@ -1,8 +1,21 @@
-
+import java.util.List;
 
 public class GameMaxPoints extends Game {
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public GameMaxPoints(Player player, List<Play> play, Integer nbMaxPoints) {
+		super(player, play);
+		this.nbMaxPoints = nbMaxPoints;
+	}
+
+
 	private Integer nbMaxPoints;
 
 

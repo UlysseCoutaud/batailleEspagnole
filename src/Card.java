@@ -12,6 +12,19 @@ public class Card {
 
 	/**
 	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Card(String rank, Color color) {
+		super();
+		this.rank = rank;
+		this.color = color;
+	}
+
+	/**
+	 *	@author ulysse TODO
 	 *	@see  TODO
 	 *	@since  TODO
 	 */

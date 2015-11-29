@@ -10,6 +10,19 @@
 public class Deck {
 
 
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Deck(Card card) {
+		super();
+		this.card = card;
+	}
+
+
 	public Card card;
 
 	/**

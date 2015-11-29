@@ -10,6 +10,19 @@
 public class Hand {
 
 
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Hand(Card card) {
+		super();
+		this.card = card;
+	}
+
+
 	private Card card;
 
 	/**
