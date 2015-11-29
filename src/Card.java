@@ -10,9 +10,9 @@
 public class Card {
 
 
-	private String rank;
+	private Rank rank;
 	private Color color;
-	
+
 
 	/**
 	 *	@author ulysse TODO
@@ -21,24 +21,24 @@ public class Card {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public Card(String rank, Color color) {
+	public Card(Rank rank, Color color) {
 		super();
-		this.rank = rank;
-		this.color = color;
+		this.setRank(rank);
+		this.setColor(color);
 	}
 
 
 	/**
 	 * Getter of rank
 	 */
-	public String getRank() {
+	public Rank getRank() {
 	 	 return rank; 
 	}
 
 	/**
 	 * Setter of rank
 	 */
-	public void setRank(String rank) { 
+	private void setRank(Rank rank) { 
 		 this.rank = rank; 
 	}
 
@@ -54,7 +54,7 @@ public class Card {
 	 * Setter of color
 	 * 
 	 */
-	public void setColor(Color color) { 
+	private void setColor(Color color) { 
 		 this.color = color; 
 	}
 
@@ -65,25 +65,25 @@ public class Card {
 	 */
 	public Integer getValue() { 
 		switch (this.rank) {
-		case "3":
+		case Trois:
 			return 10;
-			case "1":
-		case "2":
-		case "4":
-		case "5":
-		case "6":
-		case "7":
-		case "8":
-		case "9":
-		case "10":
+		case Un:
+		case Deux:
+		case Quatre:
+		case Cinq:
+		case Six:
+		case Sept:
+		case Huit:
+		case Neuf:
+		case Dix:
 			return 0;
-		case "As":
+		case As:
 			return 11;
-		case "Roi":
+		case Roi:
 			return 4;
-		case "Dame":
+		case Dame:
 			return 3;
-		case "Cavalier":
+		case Cavalier:
 			return 2;
 		default:
 			break;
