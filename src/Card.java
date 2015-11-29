@@ -10,6 +10,10 @@
 public class Card {
 
 
+	private String rank;
+	private Color color;
+	
+
 	/**
 	 *	@author ulysse TODO
 	 *	@param TODO
@@ -23,77 +27,41 @@ public class Card {
 		this.color = color;
 	}
 
-	/**
-	 *	@author ulysse TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	private String rank;
-
-	
-	/**
-	 *	@author ulysse TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	private Color color;
-	
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * Getter of rank
 	 */
 	public String getRank() {
 	 	 return rank; 
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * Setter of rank
 	 */
 	public void setRank(String rank) { 
 		 this.rank = rank; 
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	Getter of color
+	 *
 	 */
 	public Color getColor() {
 	 	 return color; 
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * Setter of color
+	 * 
 	 */
 	public void setColor(Color color) { 
 		 this.color = color; 
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@return value of a card.
+	 *	@since  V0
 	 */
 	public Integer getValue() { 
 		switch (this.rank) {
@@ -124,24 +92,18 @@ public class Card {
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
+	 *	@return Signature of a card.
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public String toString() { 
 		return "["+this.rank+" of "+this.color.toString()+"]";
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
 		System.out.println(this.toString());
