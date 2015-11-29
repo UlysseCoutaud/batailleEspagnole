@@ -5,19 +5,22 @@ public class GameMaxPoints extends Game {
 	
 	private Integer nbMaxPoints;
 
-	/**
-	 * Getter of nbMaxPoints
-	 */
-	public Integer getNbMaxPoints() {
-	 	 return nbMaxPoints; 
-	}
 
 	/**
-	 * Setter of nbMaxPoints
+	 * @return the nbMaxPoints
 	 */
-	public void setNbMaxPoints(Integer nbMaxPoints) { 
-		 this.nbMaxPoints = nbMaxPoints; 
+	public Integer getNbMaxPoints() {
+		return nbMaxPoints;
 	}
+
+
+	/**
+	 * @param nbMaxPoints the nbMaxPoints to set
+	 */
+	public void setNbMaxPoints(Integer nbMaxPoints) {
+		this.nbMaxPoints = nbMaxPoints;
+	}
+
 
 	/**
 	 * 

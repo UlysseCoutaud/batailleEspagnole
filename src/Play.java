@@ -2,6 +2,13 @@
 
 import java.util.List;
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public class Play {
 
 	
@@ -47,18 +54,39 @@ public class Play {
 		 this.trump = trump; 
 	}
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void print() { 
 		// TODO Auto-generated method
 	 }
+
 	/**
-	 * @Override
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see java.lang.Object#toString()
+	 *	@since TODO
 	 */
 	public String toString() { 
 		// TODO Auto-generated method
 		return null;
 	 }
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void next() { 
 		// TODO Auto-generated method
 	 } 

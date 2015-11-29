@@ -1,5 +1,12 @@
 
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public abstract class Player {
 
 	
@@ -44,28 +51,51 @@ public abstract class Player {
 	public void setName(String name) { 
 		 this.name = name; 
 	}
+
 	/**
-	 * 
-	 * @param points 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public void addPoints(int points) { 
 		// TODO Auto-generated method
 	 }
+
 	/**
-	 * @Override
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see java.lang.Object#toString()
+	 *	@since TODO
 	 */
 	public String toString() { 
 		// TODO Auto-generated method
 		return null;
 	 }
 
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void print() { 
 		// TODO Auto-generated method
 	 }
+
 	/**
-	 * 
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public abstract Card putCard(); 
 

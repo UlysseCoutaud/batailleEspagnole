@@ -1,9 +1,16 @@
 
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public class Hand {
 
 
-	public Card card;
+	private Card card;
 
 	/**
 	 * Getter of card
@@ -19,22 +26,14 @@ public class Hand {
 		 this.card = card; 
 	}
 
-	public void CopyOf_print_1() { 
-		// TODO Auto-generated method
-	 }
 
 	/**
-	 * @Override
-	 * @return 
-	 */
-	public String CopyOf_toString_1() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
-	 * @Override
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see java.lang.Object#toString()
+	 *	@since TODO
 	 */
 	public String toString() { 
 		// TODO Auto-generated method
@@ -42,21 +41,39 @@ public class Hand {
 	 }
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void print() { 
 		// TODO Auto-generated method
 	 }
 
+
 	/**
-	 * 
-	 * @param c 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public void takeCard(Card c) { 
 		// TODO Auto-generated method
 	 }
 
+
 	/**
-	 * 
-	 * @param i 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public void putCard(Integer i) { 
 		// TODO Auto-generated method

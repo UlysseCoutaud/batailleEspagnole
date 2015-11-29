@@ -1,5 +1,12 @@
 
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public class GameNbPlay extends Game {
 
 	
@@ -19,9 +26,14 @@ public class GameNbPlay extends Game {
 		 this.nbPlays = nbPlays; 
 	}
 
+
 	/**
-	 * 
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see Game#isOver()
+	 *	@since TODO
 	 */
 	public Boolean isOver() { 
 		// TODO Auto-generated method

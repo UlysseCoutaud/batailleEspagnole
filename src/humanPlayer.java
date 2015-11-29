@@ -1,10 +1,21 @@
 
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public class humanPlayer extends Player {
 
 	/**
-	 * 
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see Player#putCard()
+	 *	@since TODO
 	 */
 	public Card putCard() { 
 		// TODO Auto-generated method

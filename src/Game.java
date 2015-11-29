@@ -2,10 +2,18 @@
 
 import java.util.List;
 
+/**
+ *	@author ulysse TODO
+ *	@version /!\ REQUIRED /!\ TODO
+ *	@exception TODO
+ *	@see  TODO
+ *	@since  TODO
+ */
 public abstract class Game {
 
 	public Player player;
 	public List<Play> play;
+
 	/**
 	 * Getter of player
 	 */
@@ -31,36 +39,73 @@ public abstract class Game {
 		 this.play = play; 
 	}
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void print() { 
 		// TODO Auto-generated method
 	 }
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
 	public void nextPlay() { 
 		// TODO Auto-generated method
 	 }
+
 	/**
-	 * 
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public abstract Boolean isOver();
+
+	
 	/**
-	 * 
-	 * @param player 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public void addPlayer(Player player) { 
 		// TODO Auto-generated method
 	 }
+
 	/**
-	 * @Override
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see java.lang.Object#toString()
+	 *	@since TODO
 	 */
 	public String toString() { 
 		// TODO Auto-generated method
 		return null;
 	 }
+
 	/**
-	 * 
-	 * @return 
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
 	 */
 	public Player getWinner() { 
 		// TODO Auto-generated method
