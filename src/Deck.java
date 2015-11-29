@@ -2,9 +2,7 @@
 
 public class Deck {
 
-	/**
-	 * 
-	 */
+
 	public Card card;
 
 	/**
