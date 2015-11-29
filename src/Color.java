@@ -1,10 +1,8 @@
  
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author ulysse
+ *	@version V0
+ *	@since  V0
  */
 public enum Color { 
 	Or,

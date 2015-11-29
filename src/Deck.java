@@ -2,28 +2,27 @@
 
 /**
  *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
+ *	@version 0
  *	@exception TODO
  *	@see  TODO
- *	@since  TODO
+ *	@since  V0
  */
 public class Deck {
 
-
 	/**
 	 *	@author ulysse TODO
-	 *	@param TODO
 	 *	@exception TODO
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public Deck(Card card) {
+	public Deck() {
 		super();
-		this.card = card;
+		this.card = new Card[52];
+		thiscard[0] = new card()
 	}
 
 
-	public Card card;
+	private Card[] card;
 
 	/**
 	 * Getter of card
