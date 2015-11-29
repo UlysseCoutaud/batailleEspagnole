@@ -83,14 +83,7 @@ public class Card {
 	 *	@since  TODO
 	 */
 	public Integer getValue() { 
-		switch (Rank) {
-		case :
-			
-			break;
 
-		default:
-			break;
-		}
 		return null;
 	 }
 
