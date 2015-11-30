@@ -17,6 +17,7 @@ public class Deck {
 	private static int numberOfCardsMax = 52 ;
 
 	/**
+	 *	Construct a full deck.
 	 *	@author Ulysse
 	 *	@since  V0
 	 */
@@ -139,7 +140,11 @@ public class Deck {
 		return c;
 	 }
 
-
+	public boolean isEmpty(){
+		return this.getCards().isEmpty();
+	}
+	
+	
 	/**
 	 *	String readable representation of the deck's content. 
 	 *	@author Ulysse
