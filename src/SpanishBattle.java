@@ -4,31 +4,18 @@ import java.util.Scanner;
 /**
  *	batailleEspagnole
  *	
- *	@author coutaudu TODO (classes and interfaces only, required)
- *	@version /!\ REQUIRED /!\ TODO (classes and interfaces only, required.)
- *	@see  TODO
- *	@since  TODO
+ *	@author coutaudu
+ *	@version 0
+ *	@since  V0
  */
 
-/**
- *	@author coutaudu TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
- */
 public class SpanishBattle {
 
 	/**
-	 *	@author coutaudu TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * 	Execution of a SpanishBattle
+	 *	@author coutaudu
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -72,5 +59,6 @@ public class SpanishBattle {
 		}
 		
 	}
+
 
 }
