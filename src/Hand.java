@@ -45,11 +45,13 @@ public class Hand {
 	}
 
 	/**
+	 * 
 	 * Getter of cards
+	 * @author Jules
 	 * @throws UnexistingCardIndex 
 	 */
 	public Card getCard(int index) throws UnexistingCardIndex {
-		if(index >cards.size())
+		if(index >=cards.size())
 			throw new UnexistingCardIndex("This card doesn't exist.");
 		return this.getCards().get(index); 
 	}
