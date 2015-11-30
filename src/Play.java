@@ -1,5 +1,6 @@
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 import batailleEspagnole.Color;
@@ -11,7 +12,7 @@ import batailleEspagnole.Color;
 public class Play {
 
 	
-	public Play(List<Trick> trick, Deck deck, Color trump,Player[] players) {
+	public Play(List<Trick> trick, Deck deck, Player[] players) {
 		super();
 		this.trick = trick;
 		this.deck = deck;
@@ -96,22 +97,33 @@ public class Play {
 	/**
 	 *  Will launch a full Trick 
 	 *	@author Jules
-	 *	@since  V0
+	 *	@since  V1
 	 */
 	public void next() { 
 		Trick currentTrick;
 		int start=0,i;
-		if(this.getTrick().size()!=0){
+		if(this.getTrick().size()!=0){//this isn't the first trick of this game
+			//research the precedent winner
 			Player winner=this.getTrick().get(this.getTrick().size()-1).getWinner(getTrump());
-			for(i=0;i<getPlayers().length-1 && winner!=getPlayers()[i];i++);
+			for(i=0;i<this.getPlayers().length-1 && winner!=this.getPlayers()[i];i++);
 			start=i;
 		}
-		currentTrick= new Trick(null, null);
-		for(i=0;i<getPlayers().length;i++)
-			currentTrick.next(getPlayers()[(start+i)%getPlayers().length]);
+		//start of the new trick
+		currentTrick= new Trick(new LinkedList<Card>(), new LinkedList<Player>());
+		for(i=0;i<this.getPlayers().length;i++){
+			currentTrick.next(this.getPlayers()[(start+i)%this.getPlayers().length]);
+			if(!this.getDeck().isEmpty())
+				this.getPlayers()[i].getHand().setCard(this.getDeck().pull());
+		}	
 		currentTrick.getWinner(getTrump()).addPoints(currentTrick.getValue());
 		this.getTrick().add(currentTrick);
 	}
 	
-
+	/**
+	 *  @author Jules
+	 *	@since  V0
+	 */
+	public boolean isOver(){
+		return this.getDeck().isEmpty();
+	}
 }
