@@ -119,7 +119,8 @@ public class Play {
 		}
 	
 	public Color chooseTrump(Card card){
-		for(int i=0;i<players.size() && !players.get(i).acceptTrump(card);i++);
+		int i = 0;
+		for(;i<players.size() && !players.get(i).acceptTrump(card);i++);
 		if(i!=players.size())
 			return card.getColor();
 		this.getDeck().insert(card);

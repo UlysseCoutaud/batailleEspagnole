@@ -29,8 +29,8 @@ public class SpanishBattle {
 		System.out.println("La partie est en nombre de tour ou en score maximal?");
 		
 		boolean isNbPlay = false;
-		String answer = null;
-		while(sc.hasNext() && (answer == null || (!answer.equals("n") && !answer.equals("p")))){
+		String answer = "";
+		while((!answer.equals("n") && !answer.equals("p"))){
 			answer = sc.next();
 		}
 		
@@ -38,10 +38,7 @@ public class SpanishBattle {
 		
 		System.out.println("Valeurs?");
 		
-		int val = -1;
-		while(sc.hasNextInt()){
-			val = sc.nextInt();
-		}
+		int val = sc.nextInt();
 		
 		String name = "toto";
 
