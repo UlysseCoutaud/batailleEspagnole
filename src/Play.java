@@ -22,7 +22,7 @@ public class Play {
 	 *	@param players - the set of players  in the partie
 	 *	@since  V2
 	 */
-	public Play(ArrayList<Player> players) {
+	public Play(Player[] players) {
 		super();
 		this.setTrick(new ArrayList<Trick>());
 		this.setDeck(new Deck());
@@ -37,7 +37,7 @@ public class Play {
 	
 	private Deck deck;
 	
-	private ArrayList<Player> players;
+	private Player[] players;
 	
 	private Color trump;
 
@@ -47,13 +47,13 @@ public class Play {
 	/**
 	 * Getter of players
 	 */
-	public ArrayList<Player> getPlayers() {
+	public Player[] getPlayers() {
 		return this.players;
 	}
 	/**
 	 * Setter of players
 	 */
-	private void setPlayers(ArrayList<Player> players2) {
+	private void setPlayers(Player[] players2) {
 		this.players = players2;
 	}
 
