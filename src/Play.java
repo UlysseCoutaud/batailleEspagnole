@@ -143,4 +143,15 @@ public class Play {
 	public boolean isOver(){
 		return this.getDeck().isEmpty();
 	}
+	/**
+	 *  @author Jules
+	 *	@since  V0
+	 */
+	public void finish(){
+		for(Player i:players){
+			i.setHand(new Hand());
+		}
+	}
+	
+	
 }
