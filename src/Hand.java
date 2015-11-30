@@ -40,7 +40,7 @@ public class Hand {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "["+card.get(0).toString()+","+card.get(1).toString()+","+card.get(2).toString()+"]";
+		return "["+this.getCard().get(0).toString()+","+this.getCard().get(1).toString()+","+this.getCard().get(2).toString()+"]";
 	 }
 
 	
@@ -58,17 +58,18 @@ public class Hand {
 	 *	@since  v0
 	 */
 	public void takeCard(Card c) { 
-		card.add(c);
+		this.getCard().add(c);
 	 }
 
 
 	/**
+	 * Will take the card number i and remove it from the hand.
 	 *	@author Jules
 	 *	@since  v0
 	 */
 	public void putCard(Integer i) { 
-		card.get(i);
-		card.remove(i);
+		this.getCard().get(i);
+		this.getCard().remove(i);
 	 } 
 
 }

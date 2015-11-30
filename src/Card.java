@@ -2,11 +2,8 @@ import batailleEspagnole.Color;
 import batailleEspagnole.Rank;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
  */
 public class Card {
 
@@ -14,14 +11,6 @@ public class Card {
 	private Rank rank;
 	private Color color;
 
-
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
 	public Card(Rank rank, Color color) {
 		super();
 		this.setRank(rank);
@@ -65,7 +54,7 @@ public class Card {
 	 *	@since  V0
 	 */
 	public Integer getValue() { 
-		switch (this.rank) {
+		switch (this.getRank()) {
 		case Trois:
 			return 10;
 		case Deux:
@@ -98,7 +87,7 @@ public class Card {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "["+this.rank+" of "+this.color.toString()+"]";
+		return "["+this.getRank()+" of "+this.getColor().toString()+"]";
 	 }
 
 	/**
