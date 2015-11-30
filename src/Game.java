@@ -78,7 +78,16 @@ public abstract class Game {
 		}
 	}
 
-
+	/**
+	 * 	Execute a whole Play (choose the trump and then plays the cards).
+	 *	@author Ulysse
+	 *	@since  V0
+	 */
+	public void run() { 
+		while(!isOver()){
+			nextPlay();
+		}
+	}
 
 	
 	/**

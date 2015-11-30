@@ -7,7 +7,7 @@ import java.util.Random;
  *	@see  TODO
  *	@since  TODO
  */
-public class automataPlayer extends Player {
+public class AutomataPlayer extends Player {
 
 
 	/**
@@ -18,7 +18,7 @@ public class automataPlayer extends Player {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public automataPlayer(String name) {
+	public AutomataPlayer(String name) {
 		super(name);
 	}
 
