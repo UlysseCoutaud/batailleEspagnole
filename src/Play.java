@@ -119,10 +119,11 @@ public class Play {
 		}
 	
 	public Color chooseTrump(Card card){
-		for(int i=0;i<players.length && !players[i].acceptTrump(card);i++);
-		if(i!=players.length)
+		for(int i=0;i<players.size() && !players.get(i).acceptTrump(card);i++);
+		if(i!=players.size())
 			return card.getColor();
-		return card.getColor();
+		this.getDeck().insert(card);
+		return this.chooseTrump(this.getDeck().pull());
 	}
 	/**
 	 *  Will launch a full Trick 
