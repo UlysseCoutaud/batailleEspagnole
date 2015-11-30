@@ -115,10 +115,15 @@ public class Play {
 	public initialise(){
 		for(Player p:players)
 			p.getHand().setCard(this.getDeck().pull());
-	//	this.setTrump(this.chooseTrump());
+		this.setTrump(this.chooseTrump(this.getDeck().pull()));
 		}
 	
-	
+	public Color chooseTrump(Card card){
+		for(int i=0;i<players.length && !players[i].acceptTrump(card);i++);
+		if(i!=players.length)
+			return card.getColor();
+		return card.getColor();
+	}
 	/**
 	 *  Will launch a full Trick 
 	 *	@author Jules
