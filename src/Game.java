@@ -80,30 +80,24 @@ public abstract class Game {
 		while(!currentPlay.isOver()){
 			currentPlay.next();
 		}
+		currentPlay.end();
+		plays.add(currentPlay);
 	}
 
 	
 	public abstract Boolean isOver();
 
-	
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
+/**
+ * 
+ * Setter of player
+ * 
+ */
 	public void setPlayer(Player player,int index) { 
 		 this.getPlayes()[index] = player; 
 	}
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	
+	 *Getter of player
 	 */
 	public Player getPlayer(int index) {
 	 	 return player[index]; 
