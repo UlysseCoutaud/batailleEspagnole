@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -6,52 +7,58 @@ import java.util.List;
  */
 public class Hand {
 
-
+	/*
+	 * CONSTRUCTORS
+	 */
+	
 	/**
-	 *	@author Jules
+	 *	@author Ulysse
 	 *	@since  V0
 	 */
-	public Hand(List<Card> cards) {
+	public Hand() {
 		super();
-		this.cards = cards;
+		this.setCards(new LinkedList<Card>());;
 	}
 
-
+	/*
+	 * ATTRIBUTES
+	 */
 	private List<Card> cards;
+
+	/*
+	 * GETTERS & SETTERS
+	 */
+	/**
+	 * @return the cards
+	 */
+	private List<Card> getCards() {
+		return cards;
+	}
+
+	/**
+	 * @param cards the cards to set
+	 */
+	private void setCards(List<Card> cards) {
+		this.cards = cards;
+	}
 
 	/**
 	 * Getter of cards
 	 */
 	public Card getCard(int index) {
-	 	 return cards.get(index); 
+	 	 return this.getCards().get(index); 
 	}
 
 	/**
 	 * Setter of cards
 	 */
 	public void setCard(Card cards) { 
-		 this.cards.add(cards); 
+		this.getCards().add(cards); 
 	}
 
-
-	/**
-	 *	@author Jules
-	 *	@return tab of 3 cards.
-	 *	@since V0
+	/*
+	 * METHODS
 	 */
-	public String toString() { 
-		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
-	 }
-
-	
-	/**
-	 *	@author Jules
-	 *	@since  V0
-	 */
-	public void print() { 
-		System.out.println(this.toString());
-	 }
-
 
 	/**
 	 *	@author Jules
@@ -71,5 +78,25 @@ public class Hand {
 		this.getCard(i);
 		this.cards.remove(i);
 	 } 
+	
+	/**
+	 *	@author Jules
+	 *	@return tab of 3 cards.
+	 *	@since V0
+	 */
+	public String toString() { 
+		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
+	 }
+
+	
+	/**
+	 *	@author Jules
+	 *	@since  V0
+	 */
+	public void print() { 
+		System.out.println(this.toString());
+	 }
+
+
 
 }

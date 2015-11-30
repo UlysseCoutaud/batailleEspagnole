@@ -140,6 +140,12 @@ public class Deck {
 		return c;
 	 }
 
+	/**
+	 * 	Return true if the deck contains no cards.
+	 *	@author Ulysse
+	 *	@return true is the deck has 0 cards.
+	 *	@since  V0
+	 */
 	public boolean isEmpty(){
 		return this.getCards().isEmpty();
 	}
