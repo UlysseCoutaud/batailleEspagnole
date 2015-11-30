@@ -6,19 +6,35 @@
  */
 public abstract class Player {
 
-	
-	public Player(Hand hand, Integer points, String name) {
+	/*
+	 * CONSTRUCTORS
+	 */
+	/**
+	 *	@author ulysse
+	 *	@param hand - the hand
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Player(String name) {
 		super();
-		this.hand = hand;
-		this.points = points;
-		this.name = name;
+		setHand(new Hand());
+		this.setPoints(0);
+		this.setName(name);
 	}
 
+	/*
+	 * ATTRIBUTES
+	 */
 	private Hand hand;
 
 	private Integer points;
 	
 	private String name;
+	
+	/*
+	 * GETTERS & SETTERS
+	 */
 	/**
 	 * Getter of hand
 	 */
@@ -28,7 +44,7 @@ public abstract class Player {
 	/**
 	 * Setter of hand
 	 */
-	public void setHand(Hand hand) { 
+	private void setHand(Hand hand) { 
 		 this.hand = hand; 
 	}
 	/**
@@ -40,7 +56,7 @@ public abstract class Player {
 	/**
 	 * Setter of points
 	 */
-	public void setPoints(Integer points) { 
+	private void setPoints(Integer points) { 
 		 this.points = points; 
 	}
 	/**
@@ -52,10 +68,14 @@ public abstract class Player {
 	/**
 	 * Setter of name
 	 */
-	public void setName(String name) { 
+	private void setName(String name) { 
 		 this.name = name; 
 	}
 
+	
+	/*
+	 * METHODS
+	 */
 	/**
 	 *	@author Jules
 	 *	@since  v0

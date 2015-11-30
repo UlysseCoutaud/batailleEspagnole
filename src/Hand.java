@@ -12,7 +12,7 @@ public class Hand {
 	 */
 	
 	/**
-	 *	@author Jules
+	 *	@author Ulysse
 	 *	@since  V0
 	 */
 	public Hand() {
@@ -46,35 +46,19 @@ public class Hand {
 	 * Getter of cards
 	 */
 	public Card getCard(int index) {
-	 	 return cards.get(index); 
+	 	 return this.getCards().get(index); 
 	}
 
 	/**
 	 * Setter of cards
 	 */
 	public void setCard(Card cards) { 
-		 this.cards.add(cards); 
+		this.getCards().add(cards); 
 	}
 
-
-	/**
-	 *	@author Jules
-	 *	@return tab of 3 cards.
-	 *	@since V0
+	/*
+	 * METHODS
 	 */
-	public String toString() { 
-		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
-	 }
-
-	
-	/**
-	 *	@author Jules
-	 *	@since  V0
-	 */
-	public void print() { 
-		System.out.println(this.toString());
-	 }
-
 
 	/**
 	 *	@author Jules
@@ -94,5 +78,25 @@ public class Hand {
 		this.getCard(i);
 		this.cards.remove(i);
 	 } 
+	
+	/**
+	 *	@author Jules
+	 *	@return tab of 3 cards.
+	 *	@since V0
+	 */
+	public String toString() { 
+		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
+	 }
+
+	
+	/**
+	 *	@author Jules
+	 *	@since  V0
+	 */
+	public void print() { 
+		System.out.println(this.toString());
+	 }
+
+
 
 }
