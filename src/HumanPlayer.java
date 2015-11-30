@@ -1,4 +1,6 @@
+import java.util.Scanner;
 
+import batailleEspagnole.UnexistingCardIndex;
 
 /**
  *	@author ulysse TODO
@@ -18,21 +20,29 @@ public class HumanPlayer extends Player {
 	 */
 	public HumanPlayer(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 * 	Get a card from the human player hand.
+	 *	@author ulysse 
+	 *	@return The card choose by the player.
 	 *	@see Player#putCard()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public Card putCard() { 
-		// TODO Auto-generated method
-		return null;
-	 }
+		Scanner sc = new Scanner(System.in);
+		this.getHand().print();
+		System.out.println("Choose a card to put:");
+		Card playedCard = null;
+		try {
+			playedCard = this.getHand().getCard(sc.nextInt());
+		} catch (UnexistingCardIndex e) {
+			System.out.println("Ce n'est pas une carte de votre main !");
+			this.putCard();
+		}
+		sc.close();
+		return playedCard;
+	}
 
 	/**
 	 *	@author ulysse TODO

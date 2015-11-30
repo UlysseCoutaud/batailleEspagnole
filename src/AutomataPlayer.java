@@ -3,11 +3,9 @@ import java.util.Random;
 import batailleEspagnole.UnexistingCardIndex;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author ulysse
+ *	@version 0
+ *	@since  V0
  */
 public class AutomataPlayer extends Player {
 
@@ -16,9 +14,7 @@ public class AutomataPlayer extends Player {
 	 * 	Create an automatic player.
 	 *	@author Ulysse
 	 *	@param name - the name of the player
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@since  0
 	 */
 	public AutomataPlayer(String name) {
 		super(name);
