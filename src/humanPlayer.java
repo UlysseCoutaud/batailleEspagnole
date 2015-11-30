@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 /**
  *	@author ulysse TODO
@@ -18,20 +18,23 @@ public class humanPlayer extends Player {
 	 */
 	public humanPlayer(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
+	 * 	Get a card from the human player hand.
 	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
+	 *	@return The card choose by the player.
 	 *	@exception TODO
 	 *	@see Player#putCard()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public Card putCard() { 
-		// TODO Auto-generated method
-		return null;
+		Scanner sc = new Scanner(System.in);
+		this.getHand().print();
+		System.out.println("Choose a card to put:");
+			 Card playedCard = this.getHand().getCard(sc.nextInt());
+		sc.close();
+		return playedCard;
 	 }
 
 	/**
