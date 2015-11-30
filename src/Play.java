@@ -107,32 +107,33 @@ public class Play {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "[ #tricks : "+this.getTrick().size()+" , deck : "+getDeck().toString()+", trump : "+getTrump().toString()+" ]";
+		return "[ #tricks : "+this.getTricks().size()+" , deck : "+getDeck().toString()+", trump : "+getTrump().toString()+" ]";
 	 }
 	
 	/**
 	 *  Will launch a full Trick 
 	 *	@author Jules
-	 *	@since  V1
+	 *	@since  V0
 	 */
 	public void next() { 
 		Trick currentTrick;
 		int start=0,i;
-		if(this.getTrick().size()!=0){//this isn't the first trick of this game
+		if(this.getTricks().size()!=0){//this isn't the first trick of this game
 			//research the precedent winner
-			Player winner=this.getTrick().get(this.getTrick().size()-1).getWinner(getTrump());
-			for(i=0;i<this.getPlayers().length-1 && winner!=this.getPlayers()[i];i++);
+			Player winner=this.getTricks().get(this.getTricks().size()-1).getWinner(getTrump());
+			for(i=0;i<this.getPlayers().size()-1 && winner!=this.getPlayers().get(i);i++);
 			start=i;
 		}
 		//start of the new trick
 		currentTrick= new Trick(new LinkedList<Card>(), new LinkedList<Player>());
-		for(i=0;i<this.getPlayers().length;i++){
-			currentTrick.next(this.getPlayers()[(start+i)%this.getPlayers().length]);
-			if(!this.getDeck().isEmpty())
-				this.getPlayers()[i].getHand().setCard(this.getDeck().pull());
+		for(i=0;i<this.getPlayers().size();i++){
+			currentTrick.next(this.getPlayers().get((start+i)%this.getPlayers().size()));
+			if(!this.getDeck().isEmpty()){
+				this.getPlayers().get(i).getHand().setCard(this.getDeck().pull());
+			}
 		}	
 		currentTrick.getWinner(getTrump()).addPoints(currentTrick.getValue());
-		this.getTrick().add(currentTrick);
+		this.getTricks().add(currentTrick);
 	}
 	
 	/**
@@ -142,4 +143,15 @@ public class Play {
 	public boolean isOver(){
 		return this.getDeck().isEmpty();
 	}
+	/**
+	 *  @author Jules
+	 *	@since  V0
+	 */
+	public void finish(){
+		for(Player i:players){
+			i.setHand(new Hand());
+		}
+	}
+	
+	
 }

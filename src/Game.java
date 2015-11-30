@@ -76,6 +76,8 @@ public abstract class Game {
 		while(!currentPlay.isOver()){
 			currentPlay.next();
 		}
+		currentPlay.finish();
+		plays.add(currentPlay);
 	}
 
 	/**
@@ -89,7 +91,6 @@ public abstract class Game {
 		}
 	}
 
-	
 	/**
 	 * 	Add a player in the Game. The number of players cannot be greater than 4.
 	 *	@author Ulysse
