@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.spi.DirStateFactory.Result;
+
+import batailleEspagnole.UnexistingPlayerIndex;
 
 public class GameMaxPoints extends Game {
 
@@ -12,7 +15,7 @@ public class GameMaxPoints extends Game {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public GameMaxPoints(Player[] player, List<Play> play, Integer nbMaxPoints) {
+	public GameMaxPoints(ArrayList<Player> player, List<Play> play, Integer nbMaxPoints) {
 		super(player, play);
 		this.nbMaxPoints = nbMaxPoints;
 	}
@@ -38,13 +41,17 @@ public class GameMaxPoints extends Game {
 
 
 	/**
-	 * 
-	 * @return the possible end of the game. 
+	 * Tell if the game is finished.
+	 * @return True if a player has reached the required number of points to win. 
 	 */
 	public Boolean isOver() { 
-		int i;
-		for(i=0;i<player.length && player[i].getPoints()<this.getNbMaxPoints();i++);
-			return i!=player.length ;
-	 } 
+		int i = 0;
+		try {
+			for(i=0;i<this.getPlayers().size() && this.getPlayer(i).getPoints()<this.getNbMaxPoints();i++);
+		} catch (UnexistingPlayerIndex e) {
+			e.printStackTrace();
+		}
+		return i != this.getPlayers().size();
+	} 
 
 }

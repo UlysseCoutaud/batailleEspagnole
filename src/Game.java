@@ -1,14 +1,20 @@
 
 
+import java.util.ArrayList;
 import java.util.List;
 
+import batailleEspagnole.TooManyPlayers;
+import batailleEspagnole.UnexistingPlayerIndex;
+
 /**
- * 	This class implément a  Game of Spanish battle.
+ * 	This class implements a  Game of Spanish battle.
  *	@author Jules
  *	@version V0
  */
 public abstract class Game {
 
+	private static final int numberMaxPlayers = 4;
+	
 	/*
 	 * CONSTRUCTORS
 	 */
@@ -16,7 +22,7 @@ public abstract class Game {
 	 *	@author Jules
 	 *	@since  V0
 	 */
-	public Game(Player[] players, List<Play> plays) {
+	public Game(ArrayList<Player> players, List<Play> plays) {
 		super();
 		this.setPlayers(players);
 		this.setPlays(plays);
@@ -25,7 +31,7 @@ public abstract class Game {
 	/*
 	 * ATTRIBUTES
 	 */
-	private Player[] players;
+	private ArrayList<Player> players;
 	private List<Play> plays;
 
 	/*
@@ -34,23 +40,23 @@ public abstract class Game {
 	/**
 	 * Getter of players
 	 */
-	public Player[] getPlayer() {
+	public ArrayList<Player> getPlayers() {
 	 	 return players; 
 	}
 	/**
 	 * Setter of players
 	 */
-	public void setPlayers(Player[] player) { 
+	public void setPlayers(ArrayList<Player> player) { 
 		 this.players = player; 
 	}
 	/**
-	 * Getter of play
+	 * Getter of plays
 	 */
 	public List<Play> getPlays() {
 	 	 return plays; 
 	}
 	/**
-	 * Setter of play
+	 * Setter of plays
 	 */
 	public void setPlays(List<Play> plays) { 
 		 this.plays = plays; 
@@ -59,63 +65,74 @@ public abstract class Game {
 	/*
 	 * METHODS
 	 */
+
 	/**
-	 *	@author Jules
+	 * 	Execute a whole Play (choose the trump and then plays the cards).
+	 *	@author Ulysse
 	 *	@since  V0
 	 */
-	public void print() { 
-		System.out.println(this.toString());
-	 }
-	
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
 	public void nextPlay() { 
-		Play currentPlay = new Play(null,new Deck());
+		Play currentPlay = new Play(this.getPlayers());
 		while(!currentPlay.isOver()){
 			currentPlay.next();
 		}
 	}
 
-	
-	public abstract Boolean isOver();
+
 
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	public void setPlayer(Player player,int index) { 
-		 this.getPlayes()[index] = player; 
-	}
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	public Player getPlayer(int index) {
-	 	 return player[index]; 
-	}
-	/**
-	 *	@author Jules
+	 * 	Add a player in the Game. The number of players cannot be greater than 4.
+	 *	@author Ulysse
+	 *	@param player - the player to include in the game
+	 * 	@throws TooManyPlayers - If we try to add a player when the number of players is already >= 4
 	 *	@since  V0
 	 */
-	public void addPlayer(Player player) { 
-		System.out.println(this.toString());
-	 }
+	public void addPlayer(Player player) throws TooManyPlayers { 
+		if (this.getPlayers().size()>= numberMaxPlayers) {
+			throw new TooManyPlayers("The number of players in this game is already maximal.");
+		}else{
+			this.getPlayers().add(player);
+		}
+	}
+	/**
+	 * 	Get a player of the Game.
+	 *	@author Ulysse
+	 *	@param index - the number of the player.
+	 *	@return a player of the game.
+	 *	@throws UnexistingPlayerIndex - If trying to access to a non existing player.
+	 *	@since  V0
+	 */
+	public Player getPlayer(int index) throws UnexistingPlayerIndex {
+		if ( this.getPlayers().size() + 1 < index ){
+			throw new UnexistingPlayerIndex("You're asking for player "+index+" but the last index of available player is "+ (this.getPlayers().size()+1));
+		}
+	 	 return this.getPlayers().get(index); 
+	}
 
+	/**
+	 * 	Get the winner of the game
+	 *	@author Ulysse
+	 *	@return The winner of the Game
+	 *	@since  V0
+	 *	@remark: equality is not supported, only one of the winners is returned. To handle in next version. 
+	 */
+	public Player getWinner() { 
+		Player currentwinner = null;
+		try {
+			currentwinner = this.getPlayer(0);
+
+			for(int i=1;i<this.getPlayers().size();i++){
+				if (this.getPlayer(i).getPoints()>currentwinner.getPoints()){
+					currentwinner=this.getPlayer(i);
+				}
+			}
+		} catch (UnexistingPlayerIndex e) {
+			e.printStackTrace();
+		}
+		return currentwinner;
+	} 
+	
 	/**
 	 *	@author Jules
 	 *	@return what is a Game
@@ -123,26 +140,29 @@ public abstract class Game {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "[ #players : "+this.getPlayer().length+" , # of play finished : "+this.play.size()+" ]";
+		return "[ #(players) : "+this.getPlayers().size()+" , # of play finished : "+this.getPlays().size()+" ]";
 	 }
-
+	
 	/**
+	 * 	Write the game in a human readable string over the standard output.
 	 *	@author Jules
-	 *	@return The winner of the Game
 	 *	@since  V0
 	 */
-	public Player getWinner() { 
-		Player currentwinner=this.getPlayer()[0];
-		for(int i=1;i<this.getPlayer().length;i++)
-			if (this.getPlayer()[i].getPoints()>currentwinner.getPoints())
-				currentwinner=this.getPlayer()[i];
-		return currentwinner;
-	 } 
+	public void print() { 
+		System.out.println(this.toString());
+	 }
 
 	/*
 	 *  ABSTRACT METHODS
 	 */
 	
 	
+	/**
+	 * 	Tell is the game is finished.
+	 *	@author Ulysse
+	 *	@return True if the game is terminated, False if it's not finished yet.
+	 *	@since  V0
+	 */
+	public abstract Boolean isOver();
 	
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,26 +18,26 @@ public class GameNbPlay extends Game {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public GameNbPlay(Player[] player, List<Play> play, Integer nbPlays) {
+	public GameNbPlay(ArrayList<Player> player, List<Play> play, Integer nbPlays) {
 		super(player, play);
-		this.nbPlays = nbPlays;
+		this.setNbPlaysMax(nbPlays);
 	}
 
 
-	private Integer nbPlays;
+	private Integer nbPlaysMax;
 
 	/**
 	 * Getter of nbPlays
 	 */
-	public Integer getNbPlays() {
-	 	 return nbPlays; 
+	public Integer getNbPlaysMax() {
+	 	 return nbPlaysMax; 
 	}
 
 	/**
 	 * Setter of nbPlays
 	 */
-	public void setNbPlays(Integer nbPlays) { 
-		 this.nbPlays = nbPlays; 
+	public void setNbPlaysMax(Integer nbPlays) { 
+		 this.nbPlaysMax = nbPlays; 
 	}
 
 
@@ -47,7 +48,7 @@ public class GameNbPlay extends Game {
 	 *	@since V0
 	 */
 	public Boolean isOver() { 
-		return this.getNbPlays()<=play.size();
+		return this.getNbPlaysMax()<=this.getPlays().size();
 	 } 
 
 }
