@@ -16,7 +16,6 @@ public class Deck {
 	private static int numberOfCardsByLine = 10 ;
 	private static int numberOfCardsMax = 52 ;
 
-	
 	/**
 	 *	@author Ulysse
 	 *	@since  V0
@@ -27,9 +26,9 @@ public class Deck {
 		
 		this.insert( new Card(Rank.Deux,		Color.Baton) );
 		this.insert( new Card(Rank.Trois,		Color.Baton) );
-		this.insert( new Card(Rank.Quatre,	Color.Baton) );
+		this.insert( new Card(Rank.Quatre,		Color.Baton) );
 		this.insert( new Card(Rank.Cinq,		Color.Baton) );
-		this.insert( new Card(Rank.Six,		Color.Baton) );
+		this.insert( new Card(Rank.Six,			Color.Baton) );
 		this.insert( new Card(Rank.Sept, 		Color.Baton) );
 		this.insert( new Card(Rank.Huit, 		Color.Baton) );
 		this.insert( new Card(Rank.Neuf, 		Color.Baton) );
@@ -38,7 +37,7 @@ public class Deck {
 		this.insert( new Card(Rank.Dame, 		Color.Baton) );
 		this.insert( new Card(Rank.Roi, 		Color.Baton) );
 		this.insert( new Card(Rank.Trois,		Color.Baton) );
-		this.insert( new Card(Rank.As, 		Color.Baton) );
+		this.insert( new Card(Rank.As, 			Color.Baton) );
 		
 		this.insert( new Card(Rank.Deux,		Color.Coupe) );
 		this.insert( new Card(Rank.Trois,		Color.Coupe) );
@@ -99,14 +98,6 @@ public class Deck {
 	}
 
 
-	/**
-	 *	Print the content of the deck on the standard out.
-	 *	@author Ulysse
-	 *	@since  0
-	 */
-	public void print() { 
-		System.out.println(this.toString());
-	}
 
 
 	/**
@@ -159,16 +150,27 @@ public class Deck {
 	public String toString() { 
 		Iterator<Card> iterator = this.getCards().iterator();
 		int i = 0;
-		String result = "";
+		String result = "|\t";
 		while (iterator.hasNext()){
 			i++;
 			if ( i == numberOfCardsByLine ) {
 				i=0;
-				result+="\n";
+				result+="\t|\n\t|";
 			}
 			result += iterator.next().toString();
 		}
+		result += "\t|\n";
 		return result;
 	 } 
 
+	/**
+	 *	Print the content of the deck on the standard out.
+	 *	@author Ulysse
+	 *	@since  0
+	 */
+	public void print() { 
+		System.out.println(this.toString());
+	}
+
+	
 }
