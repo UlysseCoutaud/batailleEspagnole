@@ -149,7 +149,7 @@ public class Play {
 	 */
 	public void finish(){
 		for(Player i:players){
-			i.setHand(new Hand());
+			i.dropHand();
 		}
 	}
 	
