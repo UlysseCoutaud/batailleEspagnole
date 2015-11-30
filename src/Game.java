@@ -3,41 +3,43 @@
 import java.util.List;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
  */
 public abstract class Game {
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
-	public Game(Player player, List<Play> play) {
+	public Game(Player[] player, List<Play> play) {
 		super();
 		this.player = player;
 		this.play = play;
 	}
 
-	public Player player;
+	public Player[] player;
 	public List<Play> play;
 
 	/**
 	 * Getter of player
 	 */
-	public Player getPlayer() {
+	public Player[] getPlayer() {
 	 	 return player; 
+	}
+	
+	public Player getPlayer(int index) {
+	 	 return player[index]; 
 	}
 	/**
 	 * Setter of player
 	 */
-	public void setPlayer(Player player) { 
+	public void setPlayer(Player[] player) { 
 		 this.player = player; 
+	}
+
+	public void setPlayer(Player player,int index) { 
+		 this.player[index] = player; 
 	}
 	/**
 	 * Getter of play
@@ -53,15 +55,11 @@ public abstract class Game {
 	}
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 	
 	/**
@@ -73,56 +71,45 @@ public abstract class Game {
 	 *	@since  TODO
 	 */
 	public void nextPlay() { 
-		// TODO Auto-generated method
-	 }
+		Play currentPlay = new Play(null,new Deck(),player);
+		while(!currentPlay.isOver()){
+		currentPlay.next();
+		}
+	}
 
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
+	
 	public abstract Boolean isOver();
 
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void addPlayer(Player player) { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
+	 *	@return what is a Game
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public String toString() { 
-		// TODO Auto-generated method
-		return null;
+		return "[ #players : "+this.getPlayer().length+" , # of play finished : "+this.play.size()+" ]";
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@return The winner of the Game
+	 *	@since  V0
 	 */
 	public Player getWinner() { 
-		// TODO Auto-generated method
-		return null;
+		Player currentwinner=this.getPlayer()[0];
+		for(int i=1;i<this.getPlayer().length;i++)
+			if (this.getPlayer()[i].getPoints()>currentwinner.getPoints())
+				currentwinner=this.getPlayer()[i];
+		return currentwinner;
 	 } 
 
 }
