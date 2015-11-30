@@ -1,6 +1,8 @@
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.smartcardio.Card;
+
 /**
  *	@author Jules
  *	@version V0
@@ -46,7 +48,9 @@ public class Hand {
 	 * Getter of cards
 	 */
 	public Card getCard(int index) {
-	 	 return this.getCards().get(index); 
+	 	if(index >cards.size())
+	 		throw new UnexistingCardIndex("This card doesn't exist.");
+		return this.getCards().get(index); 
 	}
 
 	/**
@@ -90,7 +94,7 @@ public class Hand {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
+		return "[ 1 : "+this.getCard(0).toString()+", 2 : "+this.getCard(1).toString()+", 3 :"+this.getCard(2).toString()+"]";
 	 }
 
 	
