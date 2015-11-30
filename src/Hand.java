@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.smartcardio.Card;
+import batailleEspagnole.UnexistingCardIndex;
 
 /**
  *	@author Jules
@@ -12,7 +12,7 @@ public class Hand {
 	/*
 	 * CONSTRUCTORS
 	 */
-	
+
 	/**
 	 *	@author Ulysse
 	 *	@since  V0
@@ -46,10 +46,11 @@ public class Hand {
 
 	/**
 	 * Getter of cards
+	 * @throws UnexistingCardIndex 
 	 */
-	public Card getCard(int index) {
-	 	if(index >cards.size())
-	 		throw new UnexistingCardIndex("This card doesn't exist.");
+	public Card getCard(int index) throws UnexistingCardIndex {
+		if(index >cards.size())
+			throw new UnexistingCardIndex("This card doesn't exist.");
 		return this.getCards().get(index); 
 	}
 
@@ -72,7 +73,7 @@ public class Hand {
 	 */
 	public void takeCard(Card c) { 
 		this.cards.add(c);
-	 }
+	}
 
 
 	/**
@@ -80,31 +81,37 @@ public class Hand {
 	 *	@author Ulysse
 	 *	@param i - index of the put card
 	 *	@return the put card
+	 *	@throws UnexistingCardIndex 
 	 *	@since  v0
 	 */
-	public Card putCard(Integer i) { 
+	public Card putCard(Integer i) throws UnexistingCardIndex { 
 		Card c = this.getCard(i);
 		this.cards.remove(i);
 		return c;
-	 } 
-	
+	} 
+
 	/**
 	 *	@author Jules
 	 *	@return tab of 3 cards.
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "[ 1 : "+this.getCard(0).toString()+", 2 : "+this.getCard(1).toString()+", 3 :"+this.getCard(2).toString()+"]";
-	 }
+		try {
+			return "[ 1 : "+this.getCard(0).toString()+", 2 : "+this.getCard(1).toString()+", 3 :"+this.getCard(2).toString()+"]";
+		} catch (UnexistingCardIndex e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
-	
+
 	/**
 	 *	@author Jules
 	 *	@since  V0
 	 */
 	public void print() { 
 		System.out.println(this.toString());
-	 }
+	}
 
 
 
