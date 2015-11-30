@@ -17,7 +17,7 @@ public class GameNbPlay extends Game {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public GameNbPlay(Player player, List<Play> play, Integer nbPlays) {
+	public GameNbPlay(Player[] player, List<Play> play, Integer nbPlays) {
 		super(player, play);
 		this.nbPlays = nbPlays;
 	}
@@ -41,16 +41,13 @@ public class GameNbPlay extends Game {
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
+	 *	@return if the game is over
 	 *	@see Game#isOver()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public Boolean isOver() { 
-		// TODO Auto-generated method
-		return null;
+		return this.getNbPlays()<=this.getNbPlays().size();
 	 } 
 
 }
