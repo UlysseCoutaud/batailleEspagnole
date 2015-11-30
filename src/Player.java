@@ -1,6 +1,7 @@
 
 
 /**
+ * 	Someone able tout play to the Spanish battle.
  *	@author Jules
  *	@version V0
  */
@@ -10,11 +11,9 @@ public abstract class Player {
 	 * CONSTRUCTORS
 	 */
 	/**
-	 *	@author ulysse
-	 *	@param hand - the hand
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Ulysse
+	 *	@param name - the player's name
+	 *	@since  V0
 	 */
 	public Player(String name) {
 		super();
@@ -77,12 +76,25 @@ public abstract class Player {
 	 * METHODS
 	 */
 	/**
+	 * 	Add victory points to the player.
 	 *	@author Jules
+	 *	@param points - number of points to add
 	 *	@since  v0
 	 */
 	public void addPoints(int points) { 
 		this.setPoints(this.getPoints()+points);
 	 }
+	
+	/**
+	 * 	Take the card into the player's hand.
+	 *	@author Ulysse
+	 *	@param c - the picked card
+	 *	@since  V0
+	 */
+	public void getCard(Card c){
+		this.getHand().takeCard(c);
+	}
+	
 
 	/**
 	 *	@author Jules

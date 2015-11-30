@@ -10,14 +10,14 @@
 public class humanPlayer extends Player {
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * 	Create a human player.
+	 *	@author Ulysse
+	 *	@param name - the name of the human player
+	 *	@see  ${@link Player#Player(String)}
+	 *	@since  V0
 	 */
-	public humanPlayer(Hand hand, Integer points, String name) {
-		super(hand, points, name);
+	public humanPlayer(String name) {
+		super(name);
 		// TODO Auto-generated constructor stub
 	}
 

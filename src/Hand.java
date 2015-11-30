@@ -61,7 +61,9 @@ public class Hand {
 	 */
 
 	/**
+	 * 	Add the card c in the hand.
 	 *	@author Jules
+	 *	@param c - the card to take in the hand
 	 *	@since  v0
 	 */
 	public void takeCard(Card c) { 
