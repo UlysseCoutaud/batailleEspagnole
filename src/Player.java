@@ -95,6 +95,14 @@ public abstract class Player {
 		this.getHand().takeCard(c);
 	}
 	
+	/**
+	 * 	The player drop all his remaining cards.
+	 *	@author Ulysse
+	 *	@since  V0
+	 */
+	public void dropHand(){
+		this.setHand(new Hand());
+	}
 
 	/**
 	 *	@author Jules
