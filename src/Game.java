@@ -80,7 +80,16 @@ public abstract class Game {
 		plays.add(currentPlay);
 	}
 
-
+	/**
+	 * 	Execute a whole Play (choose the trump and then plays the cards).
+	 *	@author Ulysse
+	 *	@since  V0
+	 */
+	public void run() { 
+		while(!isOver()){
+			nextPlay();
+		}
+	}
 
 	/**
 	 * 	Add a player in the Game. The number of players cannot be greater than 4.
