@@ -68,7 +68,6 @@ public class Card {
 		switch (this.rank) {
 		case Trois:
 			return 10;
-		case Un:
 		case Deux:
 		case Quatre:
 		case Cinq:
