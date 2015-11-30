@@ -7,7 +7,7 @@
  *	@see  TODO
  *	@since  TODO
  */
-public class humanPlayer extends Player {
+public class HumanPlayer extends Player {
 
 	/**
 	 * 	Create a human player.
@@ -16,7 +16,7 @@ public class humanPlayer extends Player {
 	 *	@see  ${@link Player#Player(String)}
 	 *	@since  V0
 	 */
-	public humanPlayer(String name) {
+	public HumanPlayer(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
