@@ -26,7 +26,7 @@ public class SpanishBattle {
 			nbPlayers = sc.nextInt();
 		}
 		
-		System.out.println("La partie est en nombre de tour ou en score maximal?");
+		System.out.println("La partie est en nombre de tour(n) ou en score maximal(p)?");
 		
 		boolean isNbPlay = false;
 		String answer = "";
