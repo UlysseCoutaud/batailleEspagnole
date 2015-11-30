@@ -2,23 +2,14 @@
 
 import java.util.List;
 
+import batailleEspagnole.Color;
+
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
  */
 public class Trick {
 
-	
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
 	public Trick(List<Card> cards, List<Player> players) {
 		super();
 		this.cards = cards;
@@ -59,69 +50,69 @@ public class Trick {
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@return the value of the trick
+	 *	@since  V0
 	 */
 	public Integer getValue() { 
-		// TODO Auto-generated method
-		return null;
+		int sum=0;
+		for(int i=0;i<cards.size();i++)
+			sum+=cards.get(i).getValue();
+		return sum;
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@param the player who is playing.
+	 *	@since  V0
 	 */
 	public void next(Player player) { 
-		// TODO Auto-generated method
+		players.add(player);
+		cards.add(player.putCard());
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *  @param the current trump in this Play
+	 *  @return the winner of this trick.
+	 *	@since V0
 	 */
-	public Player getWinner() { 
-		// TODO Auto-generated method
-		return null;
+	public Player getWinner(Color trump) { 
+		int currentwinner=0;
+		boolean isTrump; 
+		Color color=cards.get(0).getColor();
+		isTrump=(color==trump);
+		for(int i=1;i<cards.size();i++){
+			if(cards.get(i).getColor()==cards.get(currentwinner).getColor() && cards.get(i).getRank().compareTo(cards.get(currentwinner).getRank())>0 || !isTrump && cards.get(i).getColor()==trump ){
+				currentwinner=i;
+				isTrump=(cards.get(i).getColor()==trump);
+			}
+		}
+		return players.get(currentwinner);
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
-	public String toString() { 
-		// TODO Auto-generated method
-		return null;
-	 } 
+	public String toString() {
+		String result="[";
+		for(int i=0;i<players.size();i++)
+			result+=players.get(i).toString() +" : "+ cards.toString()+" ";
+		result+="]";
+		return result;
+	} 	
 
 }

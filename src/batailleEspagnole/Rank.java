@@ -5,7 +5,6 @@ package batailleEspagnole;
  *	@since  V0
  */
 public enum Rank { 
-	Un,
 	Deux,
 	Quatre,
 	Cinq,
