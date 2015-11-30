@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import batailleEspagnole.Color;
+
 /**
  *	@author ulysse TODO
  *	@version /!\ REQUIRED /!\ TODO

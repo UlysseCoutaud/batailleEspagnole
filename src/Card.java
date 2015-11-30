@@ -1,4 +1,5 @@
-
+import batailleEspagnole.Color;
+import batailleEspagnole.Rank;
 
 /**
  *	@author ulysse TODO
