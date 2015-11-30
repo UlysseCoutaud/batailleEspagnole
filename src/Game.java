@@ -86,9 +86,13 @@ public abstract class Game {
 	 *	@since  V0
 	 */
 	public void run() { 
+		System.out.println("Running the Spanish Battle Game:");
 		while(!isOver()){
+			System.out.println("Starting a new Trick:");
 			nextPlay();
 		}
+		System.out.println("The game is over.");
+		System.out.println("The winner is " + this.getWinner() + ". Congratulations! ");
 	}
 
 	/**

@@ -22,12 +22,12 @@ public class Play {
 	 *	@param players - the set of players  in the partie
 	 *	@since  V2
 	 */
-	public Play(Player[] players) {
+	public Play(ArrayList<Player> players) {
 		super();
 		this.setTrick(new ArrayList<Trick>());
 		this.setDeck(new Deck());
 		this.setPlayers( players);
-		this.initialise();
+		this.initialize();
 	}
 
 	/*
@@ -37,7 +37,7 @@ public class Play {
 	
 	private Deck deck;
 	
-	private Player[] players;
+	private ArrayList<Player> players;
 	
 	private Color trump;
 
@@ -47,13 +47,13 @@ public class Play {
 	/**
 	 * Getter of players
 	 */
-	public Player[] getPlayers() {
+	public ArrayList<Player> getPlayers() {
 		return this.players;
 	}
 	/**
 	 * Setter of players
 	 */
-	private void setPlayers(Player[] players2) {
+	private void setPlayers(ArrayList<Player> players2) {
 		this.players = players2;
 	}
 
@@ -112,7 +112,7 @@ public class Play {
 	 }
 	
 	
-	public initialise(){
+	public void initialize(){
 		for(Player p:players)
 			p.getHand().setCard(this.getDeck().pull());
 		this.setTrump(this.chooseTrump(this.getDeck().pull()));
