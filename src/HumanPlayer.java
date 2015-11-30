@@ -3,11 +3,9 @@ import java.util.Scanner;
 import batailleEspagnole.UnexistingCardIndex;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author ulysse 
+ *	@version 0
+ *	@since  V0
  */
 public class HumanPlayer extends Player {
 
@@ -45,17 +43,24 @@ public class HumanPlayer extends Player {
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 * 	Interaction with the human player to accept or not the trump
+	 *	@author ulysse
+	 *	@param c - The card taken from the top of the deck.
+	 *	@return True if the player accepted the color as trump
 	 *	@see Player#acceptTrump(Card)
-	 *	@since TODO
+	 *	@since V0
 	 */
 	@Override
 	public boolean acceptTrump(Card c) {
-		// TODO Auto-generated method stub
-		return false;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("La carte retourné est:" + c +"\nAccepter cet atout ? [yes/no]");
+		String res = sc.nextLine();
+		sc.close();
+		if (res.equals("y") || res.equals("Y") || res.equals("yes") || res.equals("Yes") || res.equals("YES")){
+			return true;
+		} else {
+			return false;
+		}
 	} 
 
 }
