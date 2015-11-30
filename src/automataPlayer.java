@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  *	@author ulysse TODO
  *	@version /!\ REQUIRED /!\ TODO
@@ -9,27 +11,26 @@ public class automataPlayer extends Player {
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
+	 * 	Create an automatic player.
+	 *	@author Ulysse
+	 *	@param name - the name of the player
 	 *	@exception TODO
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public automataPlayer(Hand hand, Integer points, String name) {
-		super(hand, points, name);
-		// TODO Auto-generated constructor stub
+	public automataPlayer(String name) {
+		super(name);
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 * 	The automatic player put a card on the table.
+	 *	@author Ulysse TODO
+	 *	@return the chosen card
 	 *	@see Player#putCard()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public Card putCard() { 
-		// TODO Auto-generated method
+		super.getHand().putCard(0);
 		return null;
 	 } 
 

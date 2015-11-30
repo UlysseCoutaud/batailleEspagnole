@@ -72,13 +72,16 @@ public class Hand {
 
 
 	/**
-	 * Will take the cards number i and remove it from the hand.
-	 *	@author Jules
+	 * 	Will take the cards number i and remove it from the hand.
+	 *	@author Ulysse
+	 *	@param i - index of the put card
+	 *	@return the put card
 	 *	@since  v0
 	 */
-	public void putCard(Integer i) { 
-		this.getCard(i);
+	public Card putCard(Integer i) { 
+		Card c = this.getCard(i);
 		this.cards.remove(i);
+		return c;
 	 } 
 	
 	/**
