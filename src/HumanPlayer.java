@@ -33,6 +33,7 @@ public class HumanPlayer extends Player {
 		System.out.println("Choose a card to put:");
 		Card playedCard = null;
 		try {
+			if (sc.hasNextInt())
 			playedCard = this.getHand().getCard(sc.nextInt());
 		} catch (UnexistingCardIndex e) {
 			System.out.println("Ce n'est pas une carte de votre main !");

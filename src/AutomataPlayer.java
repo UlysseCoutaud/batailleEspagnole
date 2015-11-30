@@ -28,8 +28,10 @@ public class AutomataPlayer extends Player {
 	 *	@since V0
 	 */
 	public Card putCard() { 
+		System.out.println("I am " + this.getName() +" I play the card:");
 		try {
-			this.getHand().putCard(0);
+			Card c = this.getHand().putCard(0);
+			System.out.println("\t"+c);
 		} catch (UnexistingCardIndex e) {
 			e.printStackTrace();
 		}
