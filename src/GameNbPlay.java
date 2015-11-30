@@ -47,7 +47,7 @@ public class GameNbPlay extends Game {
 	 *	@since V0
 	 */
 	public Boolean isOver() { 
-		return this.getNbPlays()<=this.getNbPlays().size();
+		return this.getNbPlays()<=play.size();
 	 } 
 
 }
