@@ -19,23 +19,26 @@ public class SpanishBattle {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("Nombre de joueurs?");
+		
 		int nbPlayers = -1;
 		while(sc.hasNextInt() && nbPlayers < 2 && nbPlayers > 4){
 			nbPlayers = sc.nextInt();
 		}
 		
+		System.out.println("La partie est en nombre de tour ou en score maximal?");
+		
 		boolean isNbPlay = false;
-		String answer = null;
-		while(sc.hasNext() && answer == null || (!answer.equals("n") && !answer.equals("p"))){
+		String answer = "";
+		while((!answer.equals("n") && !answer.equals("p"))){
 			answer = sc.next();
 		}
 		
 		isNbPlay = answer.equals("n");
 		
-		int val = -1;
-		while(sc.hasNextInt() && val == -1){
-			val = sc.nextInt();
-		}
+		System.out.println("Valeurs?");
+		
+		int val = sc.nextInt();
 		
 		String name = "toto";
 
