@@ -1,95 +1,74 @@
-
+import java.util.List;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
  */
 public class Hand {
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
-	public Hand(Card card) {
+	public Hand(List<Card> card) {
 		super();
 		this.card = card;
 	}
 
 
-	private Card card;
+	private List<Card> card;
 
 	/**
 	 * Getter of card
 	 */
-	public Card getCard() {
-	 	 return card; 
+	public Card getCard(int index) {
+	 	 return card.get(index); 
 	}
 
 	/**
 	 * Setter of card
 	 */
 	public void setCard(Card card) { 
-		 this.card = card; 
+		 this.card.add(card); 
 	}
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@author Jules
+	 *	@return tab of 3 cards.
+	 *	@since V0
 	 */
 	public String toString() { 
-		// TODO Auto-generated method
-		return null;
+		return "["+card.get(0).toString()+","+card.get(1).toString()+","+card.get(2).toString()+"]";
 	 }
 
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  v0
 	 */
 	public void takeCard(Card c) { 
-		// TODO Auto-generated method
+		card.add(c);
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  v0
 	 */
 	public void putCard(Integer i) { 
-		// TODO Auto-generated method
+		card.get(i);
+		card.remove(i);
 	 } 
 
 }
