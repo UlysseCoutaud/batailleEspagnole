@@ -11,26 +11,26 @@ public class Hand {
 	 *	@author Jules
 	 *	@since  V0
 	 */
-	public Hand(List<Card> card) {
+	public Hand(List<Card> cards) {
 		super();
-		this.card = card;
+		this.cards = cards;
 	}
 
 
-	private List<Card> card;
+	private List<Card> cards;
 
 	/**
-	 * Getter of card
+	 * Getter of cards
 	 */
 	public Card getCard(int index) {
-	 	 return card.get(index); 
+	 	 return cards.get(index); 
 	}
 
 	/**
-	 * Setter of card
+	 * Setter of cards
 	 */
-	public void setCard(Card card) { 
-		 this.card.add(card); 
+	public void setCard(Card cards) { 
+		 this.cards.add(cards); 
 	}
 
 
@@ -40,7 +40,7 @@ public class Hand {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "["+this.getCard().get(0).toString()+","+this.getCard().get(1).toString()+","+this.getCard().get(2).toString()+"]";
+		return "["+this.getCard(0).toString()+","+this.getCard(1).toString()+","+this.getCard(2).toString()+"]";
 	 }
 
 	
@@ -58,18 +58,18 @@ public class Hand {
 	 *	@since  v0
 	 */
 	public void takeCard(Card c) { 
-		this.getCard().add(c);
+		this.cards.add(c);
 	 }
 
 
 	/**
-	 * Will take the card number i and remove it from the hand.
+	 * Will take the cards number i and remove it from the hand.
 	 *	@author Jules
 	 *	@since  v0
 	 */
 	public void putCard(Integer i) { 
-		this.getCard().get(i);
-		this.getCard().remove(i);
+		this.getCard(i);
+		this.cards.remove(i);
 	 } 
 
 }
