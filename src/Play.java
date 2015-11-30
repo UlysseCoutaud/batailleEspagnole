@@ -7,7 +7,6 @@ import batailleEspagnole.Color;
 /**
  *	@author Jules
  *	@version V0
- *	@since  V0
  */
 public class Play {
 

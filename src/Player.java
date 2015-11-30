@@ -70,7 +70,7 @@ public abstract class Player {
 	 *	@since V0
 	 */
 	public String toString() { 
-		return "["+this.name+"has "+this.points+" points and his hand is : "+this.hand.toString()+"]";
+		return "["+this.getName()+"has "+this.getPoints()+" points and his hand is : "+this.getHand().toString()+"]";
 	 }
 
 	/**

@@ -56,8 +56,8 @@ public class Trick {
 	 */
 	public Integer getValue() { 
 		int sum=0;
-		for(int i=0;i<cards.size();i++)
-			sum+=cards.get(i).getValue();
+		for(int i=0;i<this.getCards().size();i++)
+			sum+=this.getCards().get(i).getValue();
 		return sum;
 	 }
 
@@ -67,12 +67,13 @@ public class Trick {
 	 *	@since  V0
 	 */
 	public void next(Player player) { 
-		players.add(player);
-		cards.add(player.putCard());
+		this.getPlayers().add(player);
+		this.getCards().add(player.putCard());
 	 }
 
 
 	/**
+	 *  Will compare each cards of the trick and find the best one.
 	 *	@author Jules
 	 *  @param the current trump in this Play
 	 *  @return the winner of this trick.
@@ -81,15 +82,15 @@ public class Trick {
 	public Player getWinner(Color trump) { 
 		int currentwinner=0;
 		boolean isTrump; 
-		Color color=cards.get(0).getColor();
+		Color color=this.getCards().get(0).getColor();
 		isTrump=(color==trump);
-		for(int i=1;i<cards.size();i++){
-			if(cards.get(i).getColor()==cards.get(currentwinner).getColor() && cards.get(i).getRank().compareTo(cards.get(currentwinner).getRank())>0 || !isTrump && cards.get(i).getColor()==trump ){
+		for(int i=1;i<this.getCards().size();i++){
+			if(this.getCards().get(i).getColor()==this.getCards().get(currentwinner).getColor() && this.getCards().get(i).getRank().compareTo(this.getCards().get(currentwinner).getRank())>0 || !isTrump && this.getCards().get(i).getColor()==trump ){
 				currentwinner=i;
-				isTrump=(cards.get(i).getColor()==trump);
+				isTrump=(this.getCards().get(i).getColor()==trump);
 			}
 		}
-		return players.get(currentwinner);
+		return this.getPlayers().get(currentwinner);
 	 }
 
 
@@ -109,8 +110,8 @@ public class Trick {
 	 */
 	public String toString() {
 		String result="[";
-		for(int i=0;i<players.size();i++)
-			result+=players.get(i).toString() +" : "+ cards.toString()+" ";
+		for(int i=0;i<this.getPlayers().size();i++)
+			result+=this.getPlayers().get(i).toString() +" : "+ this.getCards().toString()+" ";
 		result+="]";
 		return result;
 	} 	
