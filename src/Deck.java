@@ -1,25 +1,29 @@
+import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Random;
 
 import batailleEspagnole.Color;
 import batailleEspagnole.Rank;
 
 /**
- *	@author ulysse TODO
+ * 	A deck of cards for the Spanish battle.
+ *	@author Ulysse
  *	@version 0
- *	@exception TODO
- *	@see  TODO
  *	@since  V0
  */
 public class Deck {
 
+	private static int numberOfCardsByLine = 10 ;
+	private static int numberOfCardsMax = 52 ;
+
+	
 	/**
-	 *	@author ulysse
+	 *	@author Ulysse
 	 *	@since  V0
 	 */
 	public Deck() {
 		super();
-		this.card = new LinkedList<Card>();
+		this.cards = new LinkedList<Card>();
 		
 		this.insert( new Card(Rank.Deux,		Color.Baton) );
 		this.insert( new Card(Rank.Trois,		Color.Baton) );
@@ -84,76 +88,87 @@ public class Deck {
 
 	}
  
-	private LinkedList<Card> card;
+	private LinkedList<Card> cards;
 
 	
 	/**
-	 * @return the card
+	 * @return the LinkedList of cards
 	 */
-	private LinkedList<Card> getCard() {
-		return card;
+	private LinkedList<Card> getCards() {
+		return cards;
 	}
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	Print the content of the deck on the standard out.
+	 *	@author Ulysse
+	 *	@since  0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
-	 }
+		System.out.println(this.toString());
+	}
 
 
 	/**
 	 *	Insert the card c at the bottom of the deck.
-	 *	@author ulysse
+	 *	@author Ulysse
 	 *	@param c - card to be inserted into the deck
 	 *	@since  V0
 	 */
 	public void insert(Card c) { 
-		this.card.add(c);
+		this.getCards().addLast(c);
+		assert this.getCards().size()<numberOfCardsMax : "Exceed maximal number of cards in deck." ;
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 * 	Mix the cards.
+	 *	@author Ulysse
+	 *	@param
+	 *	@since  V0
 	 */
 	public void mix() { 
-		// TODO Auto-generated method
-	 }
+		Random r = new Random();
+		for (int i=0; i < this.getCards().size(); i++){
+			int alea = r.nextInt(this.getCards().size());
+			Card c = this.getCards().get(alea);
+			this.getCards().remove(alea);
+			this.insert(c);			
+		}
+	}
 
 
 	/**
-	 * 	Pull a card from the deck.
-	 *	@author ulysse
+	 * 	Pull a card from the top of the deck.
+	 *	@author Ulysse
 	 *	@return The card pulled from the deck.
 	 *	@since  V0
 	 */
 	public Card pull() { 
-		// TODO
-		return null;
+		Card c = this.getCards().pollFirst();
+		return c;
 	 }
 
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	String readable representation of the deck's content. 
+	 *	@author Ulysse
+	 *	@return String representation of the deck.
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public String toString() { 
-		// TODO Auto-generated method
-		return null;
+		Iterator<Card> iterator = this.getCards().iterator();
+		int i = 0;
+		String result = "";
+		while (iterator.hasNext()){
+			i++;
+			if ( i == numberOfCardsByLine ) {
+				i=0;
+				result+="\n";
+			}
+			result += iterator.next().toString();
+		}
+		return result;
 	 } 
 
 }
