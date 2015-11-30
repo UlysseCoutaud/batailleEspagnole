@@ -1,5 +1,7 @@
 import java.util.List;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class GameMaxPoints extends Game {
 
 	
@@ -10,7 +12,7 @@ public class GameMaxPoints extends Game {
 	 *	@see  TODO
 	 *	@since  TODO
 	 */
-	public GameMaxPoints(Player player, List<Play> play, Integer nbMaxPoints) {
+	public GameMaxPoints(Player[] player, List<Play> play, Integer nbMaxPoints) {
 		super(player, play);
 		this.nbMaxPoints = nbMaxPoints;
 	}
@@ -37,11 +39,12 @@ public class GameMaxPoints extends Game {
 
 	/**
 	 * 
-	 * @return 
+	 * @return the possible end of the game. 
 	 */
 	public Boolean isOver() { 
-		// TODO Auto-generated method
-		return null;
+		int i;
+		for(i=0;i<player.length && player[i].getPoints()<this.getNbMaxPoints();i++);
+			return i!=player.length ;
 	 } 
 
 }
