@@ -1,22 +1,12 @@
 
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
  */
 public abstract class Player {
 
 	
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
 	public Player(Hand hand, Integer points, String name) {
 		super();
 		this.hand = hand;
@@ -67,50 +57,30 @@ public abstract class Player {
 	}
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  v0
 	 */
 	public void addPoints(int points) { 
-		// TODO Auto-generated method
+		this.setPoints(this.getPoints()+points);
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public String toString() { 
-		// TODO Auto-generated method
-		return null;
+		return "["+this.name+"has "+this.points+" points and his hand is : "+this.hand.toString()+"]";
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	public abstract Card putCard(); 
-
+	public abstract Card putCard();
 }
+		
