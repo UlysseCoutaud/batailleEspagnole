@@ -111,13 +111,24 @@ public class Play {
 		return "[ #tricks : "+this.getTricks().size()+" , deck : "+getDeck().toString()+", trump : "+getTrump().toString()+" ]";
 	 }
 	
-	
+	/**
+	 * 	Will set hands of players and call choosetrump 
+	 *	@author Jules
+	 *	@since V0
+	 */
 	public void initialize(){
+		for(int i=0;i<3;i++)
 		for(Player p:players)
 			p.getHand().setCard(this.getDeck().pull());
 		this.setTrump(this.chooseTrump(this.getDeck().pull()));
-		}
-	
+	}
+	/**
+	 *  Will choose the trump for the PLay, and loop. 
+	 *	@author Jules
+	 *	@param the potential trump players can choose or not
+	 *	@return In which color will be the Trump
+	 *	@since V0
+	 */
 	public Color chooseTrump(Card card){
 		int i = 0;
 		for(;i<players.size() && !players.get(i).acceptTrump(card);i++);
