@@ -3,57 +3,62 @@
 import java.util.List;
 
 /**
+ * 	This class implément a  Game of Spanish battle.
  *	@author Jules
  *	@version V0
  */
 public abstract class Game {
 
+	/*
+	 * CONSTRUCTORS
+	 */
 	/**
 	 *	@author Jules
 	 *	@since  V0
 	 */
-	public Game(Player[] player, List<Play> play) {
+	public Game(Player[] players, List<Play> plays) {
 		super();
-		this.player = player;
-		this.play = play;
+		this.setPlayers(players);
+		this.setPlays(plays);
 	}
 
-	public Player[] player;
-	public List<Play> play;
+	/*
+	 * ATTRIBUTES
+	 */
+	private Player[] players;
+	private List<Play> plays;
 
+	/*
+	 * GETTERS & SETTERS
+	 */
 	/**
-	 * Getter of player
+	 * Getter of players
 	 */
 	public Player[] getPlayer() {
-	 	 return player; 
-	}
-	
-	public Player getPlayer(int index) {
-	 	 return player[index]; 
+	 	 return players; 
 	}
 	/**
-	 * Setter of player
+	 * Setter of players
 	 */
-	public void setPlayer(Player[] player) { 
-		 this.player = player; 
-	}
-
-	public void setPlayer(Player player,int index) { 
-		 this.player[index] = player; 
+	public void setPlayers(Player[] player) { 
+		 this.players = player; 
 	}
 	/**
 	 * Getter of play
 	 */
-	public List<Play> getPlay() {
-	 	 return play; 
+	public List<Play> getPlays() {
+	 	 return plays; 
 	}
 	/**
 	 * Setter of play
 	 */
-	public void setPlay(List<Play> play) { 
-		 this.play = play; 
+	public void setPlays(List<Play> plays) { 
+		 this.plays = plays; 
 	}
-	
+
+	/*
+	 * METHODS
+	 */
 	/**
 	 *	@author Jules
 	 *	@since  V0
@@ -71,9 +76,9 @@ public abstract class Game {
 	 *	@since  TODO
 	 */
 	public void nextPlay() { 
-		Play currentPlay = new Play(null,new Deck(),player);
+		Play currentPlay = new Play(null,new Deck());
 		while(!currentPlay.isOver()){
-		currentPlay.next();
+			currentPlay.next();
 		}
 	}
 
@@ -81,6 +86,28 @@ public abstract class Game {
 	public abstract Boolean isOver();
 
 	
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public void setPlayer(Player player,int index) { 
+		 this.getPlayes()[index] = player; 
+	}
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see  TODO
+	 *	@since  TODO
+	 */
+	public Player getPlayer(int index) {
+	 	 return player[index]; 
+	}
 	/**
 	 *	@author Jules
 	 *	@since  V0
@@ -112,4 +139,10 @@ public abstract class Game {
 		return currentwinner;
 	 } 
 
+	/*
+	 *  ABSTRACT METHODS
+	 */
+	
+	
+	
 }

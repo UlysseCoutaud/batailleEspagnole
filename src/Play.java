@@ -1,67 +1,83 @@
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import batailleEspagnole.Color;
 
 /**
+ * 	A play gather the choose of a trump color and the succession of tricks.
  *	@author Jules
  *	@version V0
  */
 public class Play {
 
-	
-	public Play(List<Trick> trick, Deck deck, Player[] players) {
+	/*
+	 * CONSTRUCTORS
+	 */
+	/**
+	 * 	Create a new Plays with an empty tricks' list, an empty playersas an empty list and a full deck.
+	 *	@author Ulysse
+	 *	@param players - the set of players  in the partie
+	 *	@since  V2
+	 */
+	public Play(Player[] players) {
 		super();
-		this.trick = trick;
-		this.deck = deck;
-		this.trump = trump;
-		this.players = players;
+		this.setTrick(new ArrayList<Trick>());
+		this.setDeck(new Deck());
+		this.setPlayers( players);
 	}
 
-	public List<Trick> trick;
+	/*
+	 * ATTRIBUTES
+	 */
+	private List<Trick> tricks;
 	
-	public Deck deck;
+	private Deck deck;
 	
 	private Player[] players;
 	
+	private Color trump;
+
+	/*
+	 * GETTERS & SETTERS
+	 */
 	/**
 	 * Getter of players
 	 */
 	public Player[] getPlayers() {
-		return players;
+		return this.players;
 	}
 	/**
 	 * Setter of players
 	 */
-	public void setPlayers(Player[] players) {
-		this.players = players;
+	private void setPlayers(Player[] players2) {
+		this.players = players2;
 	}
 
-	private Color trump;
 	/**
-	 * Getter of trick
+	 * Getter of tricks
 	 */
-	public List<Trick> getTrick() {
-	 	 return trick; 
+	public List<Trick> getTricks() {
+	 	 return this.tricks; 
 	}
 	/**
 	 * Setter of trick
 	 */
-	public void setTrick(List<Trick> trick) { 
-		 this.trick = trick; 
+	private void setTrick(List<Trick> trick) { 
+		 this.tricks = trick; 
 	}
 	/**
 	 * Getter of deck
 	 */
-	public Deck getDeck() {
+	private Deck getDeck() {
 	 	 return deck; 
 	}
 	/**
 	 * Setter of deck
 	 */
-	public void setDeck(Deck deck) { 
+	private void setDeck(Deck deck) { 
 		 this.deck = deck; 
 	}
 	/**
