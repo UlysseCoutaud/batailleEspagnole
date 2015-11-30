@@ -32,6 +32,20 @@ public class humanPlayer extends Player {
 	public Card putCard() { 
 		// TODO Auto-generated method
 		return null;
-	 } 
+	 }
+
+	/**
+	 *	@author ulysse TODO
+	 *	@param TODO
+	 *	@return TODO
+	 *	@exception TODO
+	 *	@see Player#acceptTrump(Card)
+	 *	@since TODO
+	 */
+	@Override
+	public boolean acceptTrump(Card c) {
+		// TODO Auto-generated method stub
+		return false;
+	} 
 
 }

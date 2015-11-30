@@ -113,6 +113,19 @@ public abstract class Player {
 		System.out.println(this.toString());
 	 }
 
+	/*
+	 * ABSTRACTS METHODS
+	 */
 	public abstract Card putCard();
+	
+	/**
+	 * 	The player tell if he/she/it to accept the color of the card af the trump for the next play. 
+	 * 	The card is suppose to come from the top of the desk and to be putted back at the bottom of it after.
+	 *	@author Ulysse
+	 *	@param c - the card 
+	 *	@return True if the player decides to accept this trump
+	 *	@since  V0
+	 */
+	public abstract boolean acceptTrump(Card c);
 }
 		

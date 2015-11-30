@@ -32,6 +32,19 @@ public class automataPlayer extends Player {
 	public Card putCard() { 
 		super.getHand().putCard(0);
 		return null;
-	 } 
+	 }
+
+	/**
+	 * 	The automata choose randomly is it decides to accept the trump.
+	 *	@author Ulysse
+	 *	@param c - The card on top of the deck (will be put at te bottom of the deck).
+	 *	@return True if the automata accept the card's color as the trump
+	 *	@see Player#acceptTrump(Card)
+	 *	@since V0
+	 */
+	@Override
+	public boolean acceptTrump(Card c) {
+		return (new Random().nextInt(3) == 0);
+	} 
 
 }
