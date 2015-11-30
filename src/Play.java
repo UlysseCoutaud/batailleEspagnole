@@ -5,33 +5,40 @@ import java.util.List;
 import batailleEspagnole.Color;
 
 /**
- *	@author ulysse TODO
- *	@version /!\ REQUIRED /!\ TODO
- *	@exception TODO
- *	@see  TODO
- *	@since  TODO
+ *	@author Jules
+ *	@version V0
+ *	@since  V0
  */
 public class Play {
 
 	
-	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
-	 */
-	public Play(List<Trick> trick, Deck deck, Color trump) {
+	public Play(List<Trick> trick, Deck deck, Color trump,Player[] players) {
 		super();
 		this.trick = trick;
 		this.deck = deck;
 		this.trump = trump;
+		this.players = players;
 	}
 
 	public List<Trick> trick;
 	
 	public Deck deck;
 	
+	private Player[] players;
+	
+	/**
+	 * Getter of players
+	 */
+	public Player[] getPlayers() {
+		return players;
+	}
+	/**
+	 * Setter of players
+	 */
+	public void setPlayers(Player[] players) {
+		this.players = players;
+	}
+
 	private Color trump;
 	/**
 	 * Getter of trick
@@ -71,40 +78,41 @@ public class Play {
 	}
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void print() { 
-		// TODO Auto-generated method
+		System.out.println(this.toString());
 	 }
 
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
+	 *	@author Jules
 	 *	@see java.lang.Object#toString()
-	 *	@since TODO
+	 *	@since V0
 	 */
 	public String toString() { 
-		// TODO Auto-generated method
-		return null;
+		return "[ #tricks : "+this.getTrick().size()+" , deck : "+getDeck().toString()+", trump : "+getTrump().toString()+" ]";
 	 }
 	
 	/**
-	 *	@author ulysse TODO
-	 *	@param TODO
-	 *	@return TODO
-	 *	@exception TODO
-	 *	@see  TODO
-	 *	@since  TODO
+	 *  Will launch a full Trick 
+	 *	@author Jules
+	 *	@since  V0
 	 */
 	public void next() { 
-		// TODO Auto-generated method
-	 } 
+		Trick currentTrick;
+		int start=0,i;
+		if(this.getTrick().size()!=0){
+			Player winner=this.getTrick().get(this.getTrick().size()-1).getWinner(getTrump());
+			for(i=0;i<getPlayers().length-1 && winner!=getPlayers()[i];i++);
+			start=i;
+		}
+		currentTrick= new Trick(null, null);
+		for(i=0;i<getPlayers().length;i++)
+			currentTrick.next(getPlayers()[(start+i)%getPlayers().length]);
+		currentTrick.getWinner(getTrump()).addPoints(currentTrick.getValue());
+		this.getTrick().add(currentTrick);
+	}
+	
 
 }
