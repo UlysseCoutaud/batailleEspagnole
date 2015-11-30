@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -6,18 +7,40 @@ import java.util.List;
  */
 public class Hand {
 
-
+	/*
+	 * CONSTRUCTORS
+	 */
+	
 	/**
 	 *	@author Jules
 	 *	@since  V0
 	 */
-	public Hand(List<Card> cards) {
+	public Hand() {
 		super();
-		this.cards = cards;
+		this.setCards(new LinkedList<Card>());;
 	}
 
-
+	/*
+	 * ATTRIBUTES
+	 */
 	private List<Card> cards;
+
+	/*
+	 * GETTERS & SETTERS
+	 */
+	/**
+	 * @return the cards
+	 */
+	private List<Card> getCards() {
+		return cards;
+	}
+
+	/**
+	 * @param cards the cards to set
+	 */
+	private void setCards(List<Card> cards) {
+		this.cards = cards;
+	}
 
 	/**
 	 * Getter of cards
