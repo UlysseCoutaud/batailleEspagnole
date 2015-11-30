@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import batailleEspagnole.UnexistingCardIndex;
+
 /**
  *	@author ulysse TODO
  *	@version /!\ REQUIRED /!\ TODO
@@ -24,13 +26,17 @@ public class AutomataPlayer extends Player {
 
 	/**
 	 * 	The automatic player put a card on the table.
-	 *	@author Ulysse TODO
+	 *	@author Ulysse
 	 *	@return the chosen card
 	 *	@see Player#putCard()
 	 *	@since V0
 	 */
 	public Card putCard() { 
-		super.getHand().putCard(0);
+		try {
+			this.getHand().putCard(0);
+		} catch (UnexistingCardIndex e) {
+			e.printStackTrace();
+		}
 		return null;
 	 }
 
