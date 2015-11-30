@@ -27,6 +27,7 @@ public class Play {
 		this.setTrick(new ArrayList<Trick>());
 		this.setDeck(new Deck());
 		this.setPlayers( players);
+		this.initialise();
 	}
 
 	/*
@@ -109,6 +110,14 @@ public class Play {
 	public String toString() { 
 		return "[ #tricks : "+this.getTrick().size()+" , deck : "+getDeck().toString()+", trump : "+getTrump().toString()+" ]";
 	 }
+	
+	
+	public initialise(){
+		for(Player p:players)
+			p.getHand().setCard(this.getDeck().pull());
+	//	this.setTrump(this.chooseTrump());
+		}
+	
 	
 	/**
 	 *  Will launch a full Trick 
